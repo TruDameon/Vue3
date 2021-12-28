@@ -7,9 +7,27 @@
 </head>
 
 <body>
+  <!-- {{firstName}} This property can only be accessed within the block where app is mounted-->
   <div id="app">
-    <p>Hey</p>
+    {{ firstName }}
+    <!-- {{ lastName1 }} variables declared outside the data block will not get retrieved-->
+    {{ lastName }}
+    <br>
+    {{ `${firstName} ${lastName.toUpperCase()}` }}
+    <br>
+    {{ fullName() }}
   </div>
+
+  <!-- <div class="app"> A vue instance can only be mounted to one element and since app class has already been used above, we don't get the values in this code section. There can only be 1 root instance with multiple children instances.
+    {{ firstName }}
+    {{ lastName }}
+  </div> -->
+
+  <!-- 
+  <div class="app2">
+    {{ firstName }}
+    {{ lastName }}
+  </div> -->
 
   <script src="https://unpkg.com/vue@next"></script>
   <script src="app.js"></script>
